@@ -1,0 +1,96 @@
+/* Print-specific overrides for Stephi Nail it! */
+
+@media print {
+  @page { size: A4; margin: 0.6cm; }
+
+  html, body {
+    background: #F8F4EF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive / fixed chrome */
+  .header, .fab, .cookie-banner, .menu-toggle, .hero-scroll,
+  .lightbox, .marquee {
+    display: none !important;
+  }
+
+  /* Reveal everything (no animation in print) */
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Section paging */
+  section, .action-banner, .footer {
+    break-inside: avoid;
+    break-before: page;
+    padding: 28px 24px !important;
+    min-height: auto !important;
+  }
+  section:first-of-type, .hero { break-before: auto !important; }
+
+  /* Hero: smaller, fits on first page */
+  .hero {
+    min-height: auto !important;
+    padding: 20px 24px !important;
+    grid-template-columns: 1.1fr 1fr !important;
+    gap: 32px !important;
+  }
+  .hero-text h1 { font-size: 84px !important; line-height: 0.95 !important; }
+  .hero-visual { aspect-ratio: 4/5 !important; max-height: 520px !important; }
+  .hero-tag, .hero-card { display: none !important; }
+
+  /* Section heads tighter */
+  .section-head { margin-bottom: 28px !important; gap: 32px !important; }
+  h2 { font-size: 40px !important; }
+  h3 { font-size: 22px !important; }
+
+  /* About */
+  .about-photo .badge { animation: none !important; }
+  .about-stats { margin-top: 24px !important; padding-top: 16px !important; }
+
+  /* Services: open all rows so all info prints */
+  .service-row .service-detail { max-height: none !important; padding: 8px 0 16px 80px !important; overflow: visible !important; }
+  .service-row { padding: 24px 0 !important; }
+
+  /* Gallery: print all tabs as static grids */
+  .gallery-tabs { display: none !important; }
+  .gallery-grid { columns: 4 !important; column-gap: 6px !important; }
+  .gallery-item { margin-bottom: 6px !important; break-inside: avoid; }
+  .gallery-print-section { break-before: page; }
+  .gallery-print-section h3.gp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* Prices */
+  .prices-grid { gap: 24px !important; }
+  .price-card { padding: 28px !important; box-shadow: none !important; border: 1px solid var(--line); }
+
+  /* Buttons */
+  .btn { box-shadow: none !important; }
+
+  /* Map: replace with static info — iframes don't print */
+  .map-frame { display: none !important; }
+  .location-grid { grid-template-columns: 1fr !important; }
+
+  /* Form: keep the contact info side, drop the form (not useful in print) */
+  .form { display: none !important; }
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  /* IG: keep the grid as a curated visual */
+  .instagram-feed { grid-template-columns: repeat(6, 1fr) !important; }
+
+  /* Footer: compact */
+  .footer { padding: 28px 24px !important; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr !important; gap: 24px !important; padding-bottom: 20px !important; }
+
+  /* Avoid splitting key cards */
+  .price-card, .service-row, .channel, .about-grid, .hero, .action-banner {
+    break-inside: avoid;
+  }
+
+  /* Disable hover transforms */
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

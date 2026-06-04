@@ -1,0 +1,38 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production builds
+/build
+/dist
+
+# env files (keys live here)
+.env
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+
+# design source archives (extracted/ported into the repo)
+*.zip
+*.tar.gz
+
+# local scratch — screenshots & playwright output at repo root (never the app's images in public/)
+.playwright-mcp/
+/*.png
+/*.jpeg
