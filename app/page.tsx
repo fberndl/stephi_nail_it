@@ -274,7 +274,7 @@ export default async function Home() {
               <div className="cat-eyebrow" style={{ fontSize: 18 }}>EMP Chair Bodywave</div>
               <h3 className="serif" style={{ fontSize: 22 }}>Pakete &amp; Einzelsitzungen</h3>
               <ul className="price-list">
-                <li><span className="pkg">Einzelsitzung<span className="sub">30 Minuten Training</span><span className="action-tag">★ KENNENLERNPREIS — SIEHE UNTEN</span></span><span className="price"><span className="price-strike">{content.emp_prices.singleOld}</span> {content.emp_prices.single}</span></li>
+                <li><span className="pkg">Einzelsitzung<span className="sub">30 Minuten Training</span><span className="action-tag">★ KENNENLERNPREIS — SIEHE UNTEN</span></span><span className="price">{content.emp_prices.singleOld}</span></li>
                 <li><span className="pkg">8er Block</span><span className="price">{content.emp_prices.block8}</span></li>
                 <li><span className="pkg">10er Block</span><span className="price">{content.emp_prices.block10}</span></li>
                 <li><span className="pkg">16er Block<span className="sub">30 € pro Sitzung — bestes Angebot</span></span><span className="price">{content.emp_prices.block16}</span></li>
